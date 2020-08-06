@@ -15,11 +15,18 @@ namespace Doug.Controllers
     {
         private Local_DBEntities db = new Local_DBEntities();
 
+        public ActionResult Index()
+        {
+
+            var name = (string)Session["User"];
+            return View(db.Activities.Where(t => t.Username == name).ToList());
+
+        }
         // GET: Activities
-        public async Task<ActionResult> Index() { 
+    //    public async Task<ActionResult> Index() { 
       
-            return View(await db.Activities.ToListAsync());
-    }
+    //        return View(await db.Activities.ToListAsync());
+    //}
 
         // GET: Activities/Details/5
         public async Task<ActionResult> Details(int? id)

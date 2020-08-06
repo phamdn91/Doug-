@@ -14,12 +14,18 @@ namespace Doug.Controllers
     public class DiariesController : Controller
     {
         private Local_DBEntities db = new Local_DBEntities();
-
-        // GET: Diaries
-        public async Task<ActionResult> Index()
+        public ActionResult Index()
         {
-            return View(await db.Diaries.ToListAsync());
+
+            var name = (string)Session["User"];
+            return View(db.Diaries.Where(t => t.Username == name).ToList());
+
         }
+        // GET: Diaries
+        //public async Task<ActionResult> Index()
+        //{
+        //    return View(await db.Diaries.ToListAsync());
+        //}
 
         // GET: Diaries/Details/5
         public async Task<ActionResult> Details(int? id)

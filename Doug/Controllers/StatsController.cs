@@ -16,10 +16,17 @@ namespace Doug.Controllers
         private Local_DBEntities db = new Local_DBEntities();
 
         // GET: Stats
-        public async Task<ActionResult> Index()
+        public ActionResult Index()
         {
-            return View(await db.Stats.ToListAsync());
+
+            var name = (string)Session["User"];
+            return View(db.Stats.Where(t => t.Username == name).ToList());
+
         }
+        //public async Task<ActionResult> Index()
+        //{
+        //    return View(await db.Stats.ToListAsync());
+        //}
 
         // GET: Stats/Details/5
         public async Task<ActionResult> Details(int? id)

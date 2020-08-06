@@ -44,15 +44,19 @@ namespace Doug
                     else
                     {
 
+                        var sql = "INSERT INTO Users (FirstName, LastName, Email, Username, Password, UpdatedDateTime) values (@FirstName, @LastName, @Email, @Username, @Password, @UpdatedDateTime)";
 
+                        SqlCommand cmd = new SqlCommand(sql, connection);
+                        cmd.Parameters.AddWithValue("FirstName", txtFirstName.Text);
+                        cmd.Parameters.AddWithValue("Email", txtEmail.Text);
+                        cmd.Parameters.AddWithValue("UpdatedDateTime", System.DateTime.Now);
+                        cmd.Parameters.AddWithValue("LastName", txtLastName.Text);
+                        cmd.Parameters.AddWithValue("UserName", txtUsername.Text);
+                        cmd.Parameters.AddWithValue("Password", txtPassword.Text);
 
-                        var sql = "INSERT INTO Users([FirstName], [LastName],[Email],[Username],[Password]) " +
-                                                "VALUES('" + txtFirstName.Text + "','" + txtLastName.Text + "', '" + txtEmail.Text +
-                                                "', '" + txtUsername.Text + "', '" + txtPassword.Text + "')";
-                        using (var cmd = new SqlCommand(sql, connection))
                         {
 
-                          
+
 
                             count = cmd.ExecuteNonQuery();
 
