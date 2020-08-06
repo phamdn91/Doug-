@@ -1,0 +1,68 @@
+﻿@model IEnumerable<Doug.Models.Diary>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Diary</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Calorie)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Breakfast)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Lunch)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Dinner)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Snacks)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Username)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.UpdatedDateTime)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Calorie)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Breakfast)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Lunch)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Dinner)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Snacks)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Username)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.UpdatedDateTime)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.Id })
+        </td>
+    </tr>
+}
+
+</table>

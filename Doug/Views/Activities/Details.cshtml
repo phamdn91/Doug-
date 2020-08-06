@@ -1,0 +1,66 @@
+﻿@model Doug.Models.Activity
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Activity</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.WeightLifting)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.WeightLifting)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Running)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Running)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Walking)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Walking)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Other)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Other)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Username)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Username)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.UpdatedDateTime)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UpdatedDateTime)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

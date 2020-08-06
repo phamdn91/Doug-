@@ -1,0 +1,62 @@
+﻿@model IEnumerable<Doug.Models.Activity>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Activity</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.WeightLifting)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Running)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Walking)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Other)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Username)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.UpdatedDateTime)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.WeightLifting)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Running)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Walking)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Other)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Username)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.UpdatedDateTime)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.Id })
+        </td>
+    </tr>
+}
+
+</table>

@@ -1,0 +1,72 @@
+﻿@model Doug.Models.Activity
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Activity</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.WeightLifting)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.WeightLifting)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Running)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Running)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Walking)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Walking)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Other)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Other)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Username)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Username)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.UpdatedDateTime)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UpdatedDateTime)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>
