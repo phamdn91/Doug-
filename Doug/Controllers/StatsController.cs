@@ -13,7 +13,7 @@ namespace Doug.Controllers
 {
     public class StatsController : Controller
     {
-        private Local_DBEntities db = new Local_DBEntities();
+        private DPFitness_dbEntities db = new DPFitness_dbEntities();
 
         // GET: Stats
         public ActionResult Index()

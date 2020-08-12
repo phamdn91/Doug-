@@ -18,7 +18,7 @@ namespace Doug.Models
         public Nullable<int> Age { get; set; }
         public Nullable<int> Height { get; set; }
         public Nullable<int> Weight { get; set; }
-        public Nullable <int> BodyFat { get; set; }
+        public Nullable<int> BodyFat { get; set; }
         public Nullable<System.DateTime> UpdatedDateTime { get; set; }
         public string Username { get; set; }
     }
